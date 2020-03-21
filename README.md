@@ -2,4 +2,4 @@
 Test and Train YOLOv1 with Tensorflow on Colab
 
 1. 在Google Colab中打开
-([Google Colab](https://colab.research.google.com/github.com/BITLiuYu/Yolov1_Tensorflow/yolov1_github.ipynb))
+([Google Colab](https://colab.research.google.com/github/BITLiuYu/Yolov1_Tensorflow/blob/master/yolov1_github.ipynb))
