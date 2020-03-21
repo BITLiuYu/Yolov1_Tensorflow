@@ -263,27 +263,7 @@ class Yolo(object):
     print('iou', iou)
     return iou
 
-    #print('iou计算！ 0')
-    #print('boxes1:',bboxes1)
-    #计算两个box的交集：交集左上角的点取两个box的max，交集的右下角的点取两个box的min
-    #int_ymin = tf.maximum(bboxes1[...,0], bboxes2[...,0])
-    #int_xmin = tf.maximum(bboxes1[...,1], bboxes2[...,1])
-    #int_ymax = tf.minimum(bboxes1[...,2], bboxes2[...,2])
-    #int_xmax = tf.minimum(bboxes1[...,3], bboxes2[...,3])
-
-    #print('iou计算！ 1')
-    #计算两个box的交集wh：如果两个box没有交集，那么wh为0（按照公式方式计算wh为负数，跟0比较取最大值）
-    #int_h = tf.maximum(int_ymax - int_ymin, 0.)
-    #int_w = tf.maximum(int_xmax - int_xmin, 0.)
-    #print('iou计算！ 2')
-    #计算IOU
-    #int_vol = int_w * int_h #交集面积
-    #vol1 = (bboxes1[...,2] - bboxes1[...,0]) * (bboxes1[...,3] - bboxes1[...,1]) #bboxes1的面积
-    #vol2 = (bboxes2[...,2] - bboxes2[...,0]) * (bboxes2[...,3] - bboxes2[...,1]) #bboxes2的面积
-    #iou = int_vol / (vol1 + vol2 - int_vol)
-    #print('iou计算完成！！',iou)
-    #return iou
-  
+   
   #计算loss
   def loss_layer(self, predicts, labels, scope='loss_layer'): 
     '''
@@ -440,8 +420,5 @@ class Yolo(object):
       tf.summary.histogram('boxes_delta_w', boxes_delta[..., 2])
       tf.summary.histogram('boxes_delta_h', boxes_delta[..., 3])
       tf.summary.histogram('iou', iou_predict_truth)
-      #total_loss = class_loss + object_loss + noobject_loss + coord_loss
-      #print('total_loss: ', total_loss)
-      #return total_loss
-      #return class_loss + object_loss + noobject_loss + coord_loss
+      
     
